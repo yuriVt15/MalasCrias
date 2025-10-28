@@ -1,32 +1,48 @@
-/* Estilos generales */
+/* --- ESTILOS GENERALES (para todos los dispositivos) --- */
 body {
-    font-family: Times, "Times New Roman", Georgia, serif;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
+/* --- ESTILOS PARA TELÉFONO --- */
+@media (max-width: 768px) {
+  body {
+    background-color: #ffe5ec;
+    background-image: url('pagina_web/fondo-movil.jpg');
+    background-size: cover;
+    font-size: 16px;
+  }
 
-img {
-    max-width: 100%;
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  img {
+    width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto;
+  }
 }
 
-h2, p {
-    text-align: center;
-}
+/* --- ESTILOS PARA COMPUTADORA --- */
+@media (min-width: 769px) {
+  body {
+    background-color: #e0f7fa;
+    background-image: url('pagina_web/fondo-desktop.jpg');
+    background-size: cover;
+    font-size: 18px;
+  }
 
-/* Estilos específicos para el header y el footer */
-header, footer {
-    padding: 10px 0;
-}
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+  }
 
-footer {
-    text-align: center;
+  img {
+    width: 400px;
+    height: auto;
+  }
 }
