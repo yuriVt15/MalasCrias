@@ -1,0 +1,16 @@
+.container {
+    position: relative;
+    overflow: hidden;
+}
+
+.fade-in-out {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in-out.active {
+    opacity: 1;
+}
