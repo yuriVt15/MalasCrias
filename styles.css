@@ -1,33 +1,165 @@
-/* Estilos generales */
-body {
-    font-family: Times, "Times New Roman", Georgia, serif;
-    margin: 0;
-    padding: 0;
+/* styles.css - Móvil primero */
+
+/* Variables y reset ligero */
+:root{
+  --max-width: 1200px;
+  --gap: 1rem;
+  --accent: #0b84ff;
+  --radius: 10px;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height:1.45;
+  color:#111;
+  background:#f7f7fb;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+/* Contenedor centrado */
+.container{
+  width:100%;
+  padding:0 1rem;
+  margin:0 auto;
+  max-width:var(--max-width);
 }
 
-h2, p {
-    text-align: center;
+/* Tipografía fluida */
+.logo{font-weight:700; font-size:clamp(1.1rem, 4vw, 1.4rem);}
+.hero-title{font-size:clamp(1.6rem, 6vw, 2.8rem); margin:.2rem 0;}
+.hero-sub{font-size:clamp(.9rem, 2.5vw, 1.15rem); color:#444;}
+
+/* Header */
+.site-header{
+  background:linear-gradient(90deg, #ffffff, #f3f6ff);
+  border-bottom:1px solid rgba(0,0,0,.05);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:var(--gap);
+  padding:.6rem 0;
 }
 
-/* Estilos específicos para el header y el footer */
-header, footer {
-    padding: 10px 0;
+/* Nav */
+.main-nav{
+  margin-left:auto;
+  display:flex;
+  gap:.75rem;
+  align-items:center;
+}
+.main-nav a{
+  text-decoration:none;
+  padding:.45rem .6rem;
+  border-radius:8px;
+  font-weight:600;
+  color:#123;
+}
+.main-nav a:hover{background:rgba(11,132,255,.08)}
+
+.nav-toggle{
+  display:none; /* se mostrará en pantallas pequeñas por media queries */
+  background:transparent;
+  border:0;
+  font-size:1.4rem;
 }
 
-footer {
-    text-align: center;
-
+/* Hero */
+.hero{
+  padding:2.2rem 0;
+  background:linear-gradient(180deg, #eef5ff 0%, transparent 60%);
 }
+.hero-inner{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+  align-items:flex-start;
+}
+
+/* Botón */
+.btn{
+  display:inline-block;
+  margin-top:.6rem;
+  padding:.6rem 1rem;
+  background:var(--accent);
+  color:white;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+/* Tarjetas: grid adaptable */
+.cards{
+  display:grid;
+  gap:1rem;
+  padding:1.5rem 0 3rem;
+  grid-template-columns: 1fr; /* 1 columna en móvil */
+}
+.card{
+  background:white;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  padding:0;
+}
+.card img{
+  display:block;
+  width:100%;
+  height:auto; /* imagen fluida */
+}
+.card h3{margin:.75rem 1rem 0.25rem;}
+.card p{margin:.25rem 1rem 1rem; color:#555;}
+
+/* Footer */
+.site-footer{padding:1.5rem 0; text-align:center; color:#666; font-size:.95rem;}
+
+/* ----- Breakpoints ----- */
+/* Tablet: >= 640px */
+@media (min-width: 640px){
+  .nav-toggle{display:none} /* aún oculto: no necesitamos en este ejemplo */
+  .main-nav a{padding:.5rem .8rem}
+  .cards{grid-template-columns: repeat(2, 1fr);} /* 2 columnas */
+  .header-inner{padding:0.8rem 0;}
+}
+
+/* Desktop: >= 992px */
+@media (min-width: 992px){
+  .nav-toggle{display:none}
+  .main-nav{gap:1rem}
+  .cards{grid-template-columns: repeat(3, 1fr);} /* 3 columnas */
+  .hero-inner{flex-direction:row; align-items:center; justify-content:space-between}
+  .hero-sub{max-width:55%}
+}
+
+/* Pequeña mejora: mostrar botón hamburguesa en pantallas muy pequeñas */
+@media (max-width: 639px){
+  .main-nav{
+    position:fixed;
+    right:1rem;
+    top:60px;
+    background:rgba(255,255,255,0.98);
+    border-radius:10px;
+    box-shadow:0 8px 24px rgba(16,24,40,0.12);
+    flex-direction:column;
+    padding:.6rem;
+    transform: translateY(-10px);
+    opacity:0;
+    pointer-events:none;
+    transition:all .18s ease;
+  }
+  .main-nav.open{
+    transform:none;
+    opacity:1;
+    pointer-events:auto;
+  }
+  .nav-toggle{display:block; margin-left: .5rem}
+}
+
+
