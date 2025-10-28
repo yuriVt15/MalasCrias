@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-image: url('pagina_web/bienvenido.jpg');
+      background-image: url('mala/bienvenido.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -119,17 +119,17 @@
 </head>
 <body>
   <div class="navbar">
-    <img src="pagina_web/casa.png" id="btnCasa" class="nav-btn" onclick="mostrar('casa')" alt="Casa">
+    <img src="mala/casa.png" id="btnCasa" class="nav-btn" onclick="mostrar('casa')" alt="Casa">
     <div style="width:100px;"></div>
-    <img src="pagina_web/info.png" id="btnInfo" class="nav-btn" onclick="mostrar('info')" alt="Info">
+    <img src="mala/info.png" id="btnInfo" class="nav-btn" onclick="mostrar('info')" alt="Info">
     <div style="width:100px;"></div>
-    <img src="pagina_web/musica.png" id="btnMusica" class="nav-btn" onclick="mostrar('musica')" alt="Música">
+    <img src="mala/musica.png" id="btnMusica" class="nav-btn" onclick="mostrar('musica')" alt="Música">
     <div style="width:100px;"></div>
-    <img src="pagina_web/redes.png" id="btnRedes" class="nav-btn" onclick="mostrar('redes')" alt="Redes">
+    <img src="mala/redes.png" id="btnRedes" class="nav-btn" onclick="mostrar('redes')" alt="Redes">
   </div>
   
   <div class="content" id="contenido">
-    <img src="pagina_web/bienlogo.png" alt="Bienvenido" class="logo-bien flotante">
+    <img src="mala/bienlogo.png" alt="Bienvenido" class="logo-bien flotante">
   </div>
 
   <div class="ruido"></div>
@@ -147,25 +147,25 @@
       if (botonActivo) botonActivo.classList.add("activo");
 
       if (seccion === "casa") {
-        document.body.style.backgroundImage = "url('pagina_web/bienvenido.jpg')";
-        cont.innerHTML = `<img src="pagina_web/bienlogo.png" alt="Bienvenido" class="logo-bien flotante">`;
+        document.body.style.backgroundImage = "url('mala/bienvenido.jpg')";
+        cont.innerHTML = `<img src="mala/bienlogo.png" alt="Bienvenido" class="logo-bien flotante">`;
       } 
       else if (seccion === "info") {
-        document.body.style.backgroundImage = "url('pagina_web/fondo2.jpg')";
+        document.body.style.backgroundImage = "url('mala/fondo2.jpg')";
         cont.innerHTML = `
         <div>
           <h1>¿¡DE QUIÉN QUIERES SABER INFORMACIÓN!?</h1>
           <div>
-            <img src="pagina_web/pepe1.png" alt="Pepe" class="flotante" onclick="mostrar('pepe')">
-            <img src="pagina_web/katy1.png" alt="Katy" class="flotante-desfase" onclick="mostrar('katy')" style="margin-left:120px;">
+            <img src="mala/pepe1.png" alt="Pepe" class="flotante" onclick="mostrar('pepe')">
+            <img src="mala/katy1.png" alt="Katy" class="flotante-desfase" onclick="mostrar('katy')" style="margin-left:120px;">
           </div>
         </div>`;
       } 
       else if (seccion === "pepe") {
-        document.body.style.backgroundImage = "url('pagina_web/fondo5.jpg')";
+        document.body.style.backgroundImage = "url('mala/fondo5.jpg')";
         cont.innerHTML = `
           <div class="info-container">
-            <img src="pagina_web/peter.png" alt="Peter">
+            <img src="mala/peter.png" alt="Peter">
             <div class="info-texto">
             Peter, personaje de Malcriada.music
               Es tímido, no tiene amigos, su mayor bully es Katy, su compañera. Juntos son vistos en diferentes ocasiones.
@@ -175,10 +175,10 @@
           </div>`;
       }
       else if (seccion === "katy") {
-        document.body.style.backgroundImage = "url('pagina_web/fondo6.jpg')";
+        document.body.style.backgroundImage = "url('mala/fondo6.jpg')";
         cont.innerHTML = `
           <div class="info-container">
-            <img src="pagina_web/katy.png" alt="Katy">
+            <img src="mala/katy.png" alt="Katy">
             <div class="info-texto">
             Katy, uno de los personajes de Malcriada.music.<br>
             Es ruda, grosera, su estilo de música favorito es el metal y el punk, su comida favorita son los pastes.
@@ -188,13 +188,13 @@
           </div>`;
       }
       else if (seccion === "musica") {
-        document.body.style.backgroundImage = "url('pagina_web/fondo3.jpg')";
+        document.body.style.backgroundImage = "url('mala/fondo3.jpg')";
         cont.innerHTML = `
           <div style="text-align:center;">
             <h1>Música</h1>
             <div id="carrusel">
               <button id="anterior">⬅️</button>
-              <img id="portada" src="pagina_web/ventana1.png" width="300">
+              <img id="portada" src="mala/ventana1.png" width="300">
               <button id="siguiente">➡️</button>
             </div>
             <p id="nombreCancion" style="font-size:25px; cursor:pointer; text-decoration:underline;">Do something!</p>
@@ -202,21 +202,21 @@
         inicializarCarrusel();
       }
       else if (seccion === "redes") {
-        document.body.style.backgroundImage = "url('pagina_web/fondo4.jpg')";
+        document.body.style.backgroundImage = "url('mala/fondo4.jpg')";
         cont.innerHTML = `<div><h1>AQUI AUN FALTA</h1></div>`;
       }
     }
 
     function inicializarCarrusel() {
       const canciones = [
-        { nombre: "Do Something!", portada: "pagina_web/ventana1.png", link: "https://www.youtube.com/watch?v=uPvldhBfwc8" },
-        { nombre: "K.O.", portada: "pagina_web/ventana2.png", link: "https://www.youtube.com/watch?v=RSj1tp31x9Y" },
-        { nombre: "LoveSong (Cover)", portada: "pagina_web/ventana3.png", link: "https://www.youtube.com/watch?v=p84PLOcepGA" },
-        { nombre: "Mision S******", portada: "pagina_web/ventana4.png", link: "https://www.youtube.com/watch?v=J_p6f885Oxg" },
-        { nombre: "No Puedo Más!", portada: "pagina_web/ventana5.png", link: "https://www.youtube.com/watch?v=4pVvxO9zneU" },
-        { nombre: "No Me Quiero Morir", portada: "pagina_web/ventana6.png", link: "https://www.youtube.com/watch?v=-Wk7CJUSpKg" },
-        { nombre: "Momento (Ft Prayers)", portada: "pagina_web/ventana7.png", link: "https://www.youtube.com/watch?v=Kh2twGe8QBU" },
-        { nombre: "AAAA", portada: "pagina_web/ventana8.png", link: "https://www.youtube.com/watch?v=rJDH-wszLvs" }
+        { nombre: "Do Something!", portada: "mala/ventana1.png", link: "https://www.youtube.com/watch?v=uPvldhBfwc8" },
+        { nombre: "K.O.", portada: "mala/ventana2.png", link: "https://www.youtube.com/watch?v=RSj1tp31x9Y" },
+        { nombre: "LoveSong (Cover)", portada: "mala/ventana3.png", link: "https://www.youtube.com/watch?v=p84PLOcepGA" },
+        { nombre: "Mision S******", portada: "mala/ventana4.png", link: "https://www.youtube.com/watch?v=J_p6f885Oxg" },
+        { nombre: "No Puedo Más!", portada: "mala/ventana5.png", link: "https://www.youtube.com/watch?v=4pVvxO9zneU" },
+        { nombre: "No Me Quiero Morir", portada: "mala/ventana6.png", link: "https://www.youtube.com/watch?v=-Wk7CJUSpKg" },
+        { nombre: "Momento (Ft Prayers)", portada: "mala/ventana7.png", link: "https://www.youtube.com/watch?v=Kh2twGe8QBU" },
+        { nombre: "AAAA", portada: "mala/ventana8.png", link: "https://www.youtube.com/watch?v=rJDH-wszLvs" }
       ];
 
       let i = 0;
@@ -236,10 +236,10 @@
     }
 
     const imagenesRuido = [
-      'pagina_web/ruido.png',
-      'pagina_web/ruido2.png',
-      'pagina_web/ruido3.png',
-      'pagina_web/ruido4.png'
+      'mala/ruido.png',
+      'mala/ruido2.png',
+      'mala/ruido3.png',
+      'mala/ruido4.png'
     ];
     const ruidoDiv = document.querySelector('.ruido');
     let ruidoIndex = 0;
