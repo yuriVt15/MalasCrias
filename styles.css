@@ -1,4 +1,4 @@
-/* --- CONFIGURACIÓN GENERAL --- */
+/* --- ESTILO GENERAL --- */
 body {
   margin: 0;
   padding: 0;
@@ -9,30 +9,30 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
   overflow-x: hidden;
-  transition: background-size 0.5s ease;
 }
 
-/* --- MENÚ PRINCIPAL --- */
+/* --- MENÚ EN LÍNEA --- */
 #menu {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 8px;
   position: absolute;
-  top: 20%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
+  flex-wrap: wrap;
 }
 
 #menu button {
   background: rgba(255, 255, 255, 0.8);
   border: none;
-  border-radius: 8px;
-  font-size: 20px;
-  padding: 10px 25px;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 5px 10px;
   cursor: pointer;
-  box-shadow: 0 3px 0 #000;
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 0 #000;
+  transition: all 0.2s ease;
 }
 
 #menu button:hover {
@@ -42,35 +42,34 @@ body {
 /* --- TEXTO BIENVENIDO --- */
 #titulo {
   position: absolute;
-  bottom: 10%;
+  bottom: 8%;
   width: 100%;
   text-align: center;
   color: white;
-  font-size: 50px;
+  font-size: 38px;
   text-shadow: 3px 3px 5px #000;
 }
 
-/* --- MODO CELULAR --- */
+/* --- VERSIÓN CELULAR --- */
 @media (max-width: 768px) {
   body {
-    background-size: 200%; /* FONDO MÁS GRANDE EN CELULAR */
+    background-size: 250%; /* fondo más grande */
     background-position: center top;
   }
 
   #menu {
-    top: 25%;
-    gap: 10px;
+    top: 3%;
+    gap: 5px;
   }
 
   #menu button {
-    font-size: 14px; /* MÁS PEQUEÑOS */
-    padding: 6px 15px;
-    border-radius: 6px;
-    box-shadow: 0 2px 0 #000;
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 4px;
   }
 
   #titulo {
-    font-size: 32px;
-    bottom: 15%;
+    font-size: 26px;
+    bottom: 12%;
   }
 }
