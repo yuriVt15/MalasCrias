@@ -1,0 +1,202 @@
+/* ------------------------------
+   CONFIGURACIÓN GENERAL
+--------------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Menú superior */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  gap: 5px;
+}
+
+nav button {
+  background-color: white;
+  border: 2px solid black;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* ------------------------------
+   SECCIONES GENERALES
+--------------------------------*/
+section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texto grande tipo título */
+h1, h2 {
+  text-shadow: 2px 2px 4px black;
+  margin: 20px 0;
+  letter-spacing: 2px;
+}
+
+/* Párrafos con sombra */
+p {
+  max-width: 700px;
+  margin: 10px auto;
+  padding: 0 10px;
+  font-size: 18px;
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* ------------------------------
+   SECCIÓN INFO Y MÚSICA
+--------------------------------*/
+.contenido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px auto;
+  max-width: 1000px;
+  flex-wrap: wrap;
+}
+
+.contenido img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 10px black);
+  transition: transform 0.3s ease;
+}
+
+.contenido img:hover {
+  transform: scale(1.05);
+}
+
+.contenido .texto {
+  max-width: 400px;
+  text-align: left;
+}
+
+/* ------------------------------
+   SECCIÓN REDES
+--------------------------------*/
+.red {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 15px auto;
+  width: 80%;
+  max-width: 500px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  text-align: left;
+}
+
+.red img {
+  width: 35px;
+  height: 35px;
+}
+
+/* Colores específicos */
+.red.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.red.youtube { background-color: #ff0000; }
+.red.spotify { background-color: #1db954; }
+
+/* ------------------------------
+   MEDIA QUERIES (RESPONSIVE)
+--------------------------------*/
+
+/* Para pantallas de hasta 1024px (tablets) */
+@media (max-width: 1024px) {
+  nav button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  .contenido {
+    gap: 20px;
+  }
+  .contenido img {
+    width: 250px;
+  }
+}
+
+/* Para pantallas de hasta 768px (teléfonos en horizontal / medianos) */
+@media (max-width: 768px) {
+  h1, h2 { font-size: 22px; }
+  p { font-size: 16px; }
+
+  .contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contenido img {
+    width: 70%;
+    max-width: 280px;
+  }
+
+  .contenido .texto {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .red {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .red img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Para pantallas muy pequeñas (celulares angostos) */
+@media (max-width: 480px) {
+  nav {
+    gap: 3px;
+    padding: 6px;
+  }
+  nav button {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+
+  h1, h2 { font-size: 20px; }
+  p { font-size: 15px; }
+
+  .contenido img {
+    width: 80%;
+  }
+
+  .red {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+  }
+}
