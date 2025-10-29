@@ -1,75 +1,103 @@
-/* --- ESTILO GENERAL --- */
+/* Ajustes generales para todos los dispositivos */
 body {
   margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
-  background-image: url('Pagina web/Bienvenido.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
-  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  -webkit-text-stroke: 1.2px black;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
-/* --- MENÚ EN LÍNEA --- */
-#menu {
+.navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
+  padding: 10px;
   flex-wrap: wrap;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  background-color: rgba(255,255,255,0.2);
 }
 
-#menu button {
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  padding: 5px 10px;
+.nav-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 2px 0 #000;
-  transition: all 0.2s ease;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-#menu button:hover {
-  transform: scale(1.05);
+.nav-btn:hover { transform: scale(1.08); }
+.nav-btn.activo { transform: scale(1.05); }
+
+.content img {
+  max-width: 90%;
+  height: auto;
+  margin: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-/* --- TEXTO BIENVENIDO --- */
-#titulo {
-  position: absolute;
-  bottom: 8%;
+.logo-bien {
   width: 100%;
-  text-align: center;
-  color: white;
-  font-size: 38px;
-  text-shadow: 3px 3px 5px #000;
+  max-width: 500px;
 }
 
-/* --- VERSIÓN CELULAR --- */
+/* Texto de info */
+.info-texto {
+  font-size: 18px;
+  max-width: 90%;
+  text-align: left;
+}
+
+/* Media queries para móviles */
 @media (max-width: 768px) {
-  body {
-    background-size: 250%; /* fondo más grande */
-    background-position: center top;
+  .nav-btn {
+    width: 70px;
+    height: 35px;
   }
 
-  #menu {
-    top: 3%;
-    gap: 5px;
+  .info-container {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  #menu button {
-    font-size: 10px;
-    padding: 3px 6px;
-    border-radius: 4px;
+  .info-texto {
+    font-size: 16px;
+    max-width: 100%;
   }
 
-  #titulo {
-    font-size: 26px;
-    bottom: 12%;
+  .content img:not(.logo-bien) {
+    width: 180px;
+  }
+
+  .logo-bien {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-btn {
+    width: 60px;
+    height: 30px;
+  }
+
+  .content img:not(.logo-bien) {
+    width: 150px;
+  }
+
+  .info-texto {
+    font-size: 14px;
   }
 }
