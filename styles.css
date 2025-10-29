@@ -1,247 +1,76 @@
-/* ================================
-   AJUSTE RESPONSIVO GENERAL
-================================ */
+/* --- CONFIGURACIÓN GENERAL --- */
 body {
   margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
+  background-image: url('Pagina web/Bienvenido.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
-  -webkit-text-stroke: 1.2px black;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-  transition: background-size 0.4s ease, background-position 0.4s ease;
+  height: 100vh;
+  overflow-x: hidden;
+  transition: background-size 0.5s ease;
 }
 
-/* ================================
-   NAVBAR
-================================ */
-.navbar {
+/* --- MENÚ PRINCIPAL --- */
+#menu {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, 0.2);
-  flex-wrap: wrap;
-}
-
-.nav-btn {
-  width: 120px;
-  height: 45px;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-.nav-btn:hover { transform: scale(1.08); }
-.nav-btn.activo { transform: scale(1.05); }
-
-/* ================================
-   CONTENIDO PRINCIPAL
-================================ */
-.content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 20px;
-  text-align: center;
-}
-
-.logo-bien {
-  width: 500px;
-  max-width: 90%;
-}
-
-.content img:not(.logo-bien) {
-  width: 250px;
-  margin: 10px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.content img:not(.logo-bien):hover { transform: scale(1.08); }
-
-/* ================================
-   INFO (Katy y Pepe)
-================================ */
-.info-container {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: nowrap;
-  max-width: 90%;
-  margin: auto;
+  gap: 15px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.info-container img {
-  width: 320px;
-  height: auto;
-  border-radius: 12px;
-  filter: drop-shadow(0 0 10px black);
-}
-
-.info-texto {
-  font-size: 22px;
-  color: white;
-  font-weight: bold;
-  max-width: 500px;
-  text-align: left;
-  line-height: 1.4;
-  -webkit-text-stroke: 1.2px black;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-}
-
-/* ================================
-   SECCIÓN MÚSICA
-================================ */
-#carrusel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-#carrusel img {
-  width: 280px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.6);
-}
-
-#carrusel button {
-  background: none;
+#menu button {
+  background: rgba(255, 255, 255, 0.8);
   border: none;
-  font-size: 30px;
+  border-radius: 8px;
+  font-size: 20px;
+  padding: 10px 25px;
   cursor: pointer;
+  box-shadow: 0 3px 0 #000;
+  transition: all 0.3s ease;
+}
+
+#menu button:hover {
+  transform: scale(1.05);
+}
+
+/* --- TEXTO BIENVENIDO --- */
+#titulo {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
   color: white;
-  text-shadow: 2px 2px 4px black;
-  transition: transform 0.2s;
+  font-size: 50px;
+  text-shadow: 3px 3px 5px #000;
 }
 
-#carrusel button:hover {
-  transform: scale(1.3);
-}
-
-/* ================================
-   RESPONSIVE
-================================ */
-
-/* 📱 Tablets */
-@media (max-width: 1000px) {
-  .nav-btn {
-    width: 100px;
-    height: 40px;
-  }
-
-  .info-texto {
-    font-size: 20px;
-    max-width: 420px;
-  }
-
-  .info-container img {
-    width: 260px;
-  }
-
+/* --- MODO CELULAR --- */
+@media (max-width: 768px) {
   body {
-    background-size: 130%;
-  }
-}
-
-/* 📱 Teléfonos medianos */
-@media (max-width: 700px) {
-  .navbar {
-    gap: 5px;
-    padding: 8px;
+    background-size: 200%; /* FONDO MÁS GRANDE EN CELULAR */
+    background-position: center top;
   }
 
-  .nav-btn {
-    width: 80px;
-    height: 30px;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  .info-container {
-    flex-wrap: nowrap; /* Mantiene texto e imagen lado a lado */
-    gap: 20px;
-  }
-
-  .info-container img {
-    width: 45%;
-  }
-
-  .info-texto {
-    font-size: 15px;
-    width: 45%;
-  }
-
-  #carrusel img {
-    width: 220px;
-  }
-
-  body {
-    background-size: 160%;
-  }
-}
-
-/* 📱 Teléfonos pequeños */
-@media (max-width: 500px) {
-  .nav-btn {
-    width: 65px;
-    height: 25px;
-  }
-
-  h1 {
-    font-size: 18px;
-  }
-
-  .info-container {
-    flex-wrap: nowrap;
+  #menu {
+    top: 25%;
     gap: 10px;
   }
 
-  .info-container img {
-    width: 48%;
+  #menu button {
+    font-size: 14px; /* MÁS PEQUEÑOS */
+    padding: 6px 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 0 #000;
   }
 
-  .info-texto {
-    font-size: 13px;
-    width: 48%;
-  }
-
-  #carrusel img {
-    width: 200px;
-  }
-
-  body {
-    background-size: 190%;
-  }
-}
-
-/* 📱 Muy pequeños */
-@media (max-width: 380px) {
-  .nav-btn {
-    width: 55px;
-    height: 22px;
-  }
-
-  .info-texto {
-    font-size: 12px;
-  }
-
-  body {
-    background-size: 220%;
+  #titulo {
+    font-size: 32px;
+    bottom: 15%;
   }
 }
