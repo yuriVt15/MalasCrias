@@ -203,10 +203,59 @@
           </div>`;
         inicializarCarrusel();
       }
-      else if (seccion === "redes") {
-        document.body.style.backgroundImage = "url('mala/fondo4.jpg')";
-        cont.innerHTML = `<div><h1>AQUI AUN FALTA</h1></div>`;
-      }
+else if (seccion === "redes") {
+  document.body.style.backgroundImage = "url('mala/fondo4.jpg')";
+  cont.innerHTML = `
+    <div style="display:flex; align-items:center; justify-content:center; gap:80px; flex-wrap:wrap;">
+      
+      <!-- COLUMNA DE REDES -->
+      <div style="display:flex; flex-direction:column; gap:50px; align-items:flex-start;">
+        
+        <!-- INSTAGRAM -->
+        <div style="display:flex; align-items:center; gap:20px;">
+          <img src="mala/instagram.png" alt="Instagram" style="width:80px; height:auto;">
+          <a href="https://www.instagram.com/malcriada.music" target="_blank" 
+             style="background:linear-gradient(90deg, #405DE6, #833AB4, #C13584, #E1306C, #F77737);
+                    width:340px; height:35px; border-radius:6px; 
+                    display:flex; align-items:center; justify-content:center;
+                    color:white; font-weight:bold; text-decoration:none;">
+            @malcriada.music
+          </a>
+        </div>
+
+        <!-- YOUTUBE -->
+        <div style="display:flex; align-items:center; gap:20px;">
+          <img src="mala/youtube.png" alt="YouTube" style="width:90px; height:auto;">
+          <a href="https://www.youtube.com/@malcriadamusic" target="_blank" 
+             style="background-color:red; width:300px; height:35px; border-radius:6px;
+                    display:flex; align-items:center; justify-content:center;
+                    color:white; font-weight:bold; text-decoration:none;">
+            Malcriada Music
+          </a>
+        </div>
+
+        <!-- SPOTIFY -->
+        <div style="display:flex; align-items:center; gap:20px;">
+          <img src="mala/spotify.png" alt="Spotify" style="width:90px; height:auto;">
+          <a href="https://open.spotify.com/artist/2ZUqAIo5iiRcSaq7TQBW5C" target="_blank" 
+             style="background-color:#1DB954; width:300px; height:35px; border-radius:6px;
+                    display:flex; align-items:center; justify-content:center;
+                    color:white; font-weight:bold; text-decoration:none;">
+            MALCRIADA
+          </a>
+        </div>
+
+      </div>
+
+      <!-- FOTO A LA DERECHA -->
+      <div>
+        <img src="mala/malcriadamusica.png" alt="Malcriada" 
+             style="width:350px; height:auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.5);">
+      </div>
+
+    </div>
+  `;
+}
     }
 
     function inicializarCarrusel() {
