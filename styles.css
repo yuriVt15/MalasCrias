@@ -1,103 +1,12 @@
-/* Ajustes generales para todos los dispositivos */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: white;
-  -webkit-text-stroke: 1.2px black;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+/* Estilos generales (modo horizontal o PC) */
+img {
+  width: 300px;
+  transition: all 0.3s ease; /* Suaviza el cambio */
 }
 
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  flex-wrap: wrap;
-  gap: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(8px);
-  background-color: rgba(255,255,255,0.2);
-}
-
-.nav-btn {
-  width: 100px;
-  height: 40px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-.nav-btn:hover { transform: scale(1.08); }
-.nav-btn.activo { transform: scale(1.05); }
-
-.content img {
-  max-width: 90%;
-  height: auto;
-  margin: 10px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.logo-bien {
-  width: 100%;
-  max-width: 500px;
-}
-
-/* Texto de info */
-.info-texto {
-  font-size: 18px;
-  max-width: 90%;
-  text-align: left;
-}
-
-/* Media queries para móviles */
-@media (max-width: 768px) {
-  .nav-btn {
-    width: 70px;
-    height: 35px;
-  }
-
-  .info-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .info-texto {
-    font-size: 16px;
-    max-width: 100%;
-  }
-
-  .content img:not(.logo-bien) {
-    width: 180px;
-  }
-
-  .logo-bien {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-btn {
-    width: 60px;
-    height: 30px;
-  }
-
-  .content img:not(.logo-bien) {
-    width: 150px;
-  }
-
-  .info-texto {
-    font-size: 14px;
+/* 📱 Cuando la pantalla está en modo vertical (portrait) */
+@media screen and (orientation: portrait) {
+  img {
+    width: 150px; /* Más pequeño en vertical */
   }
 }
