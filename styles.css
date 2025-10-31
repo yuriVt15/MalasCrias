@@ -1,12 +1,13 @@
-/* Estilos generales (modo horizontal o PC) */
+/* Estilos normales (horizontal o PC) */
 img {
   width: 300px;
-  transition: all 0.3s ease; /* Suaviza el cambio */
+  transition: all 0.3s ease;
 }
 
-/* 📱 Cuando la pantalla está en modo vertical (portrait) */
+/* 📱 En modo vertical (portrait, celulares) */
 @media screen and (orientation: portrait) {
   img {
-    width: 150px; /* Más pequeño en vertical */
+    width: 90px;      /* tamaño mucho más pequeño */
+    height: auto;     /* mantiene proporción */
   }
 }
