@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MALCRIADA</title>
-    <link rel="icon" href="mala/katy1.png">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MALCRIADA</title>
+  <link rel="icon" href="mala/katy1.png">
+  <link rel="stylesheet" href="styles.css">
   <style>
     body {
       margin: 0;
@@ -117,6 +117,43 @@
       z-index: 9999;
       transition: background-image 0.1s linear;
     }
+
+    /* 🔒 Modo vertical (solo mensaje en negro) */
+    @media screen and (orientation: portrait) {
+      body {
+        background-color: black !important;
+        background-image: none !important;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      /* Ocultar todo el contenido */
+      .navbar, #contenido, .ruido {
+        display: none !important;
+      }
+
+      /* Mostrar el mensaje */
+      #solo-pc {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        font-size: 2.2em;
+        font-weight: bold;
+        color: white;
+      }
+    }
+
+    /* En horizontal, ocultamos el mensaje */
+    @media screen and (orientation: landscape) {
+      #solo-pc {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -133,6 +170,9 @@
   <div class="content" id="contenido">
     <img src="mala/bienlogo.png" alt="Bienvenido" class="logo-bien flotante">
   </div>
+
+  <!-- ⚠️ Mensaje en modo vertical -->
+  <div id="solo-pc">Solo disponible en PC</div>
 
   <div class="ruido"></div>
 
@@ -169,12 +209,8 @@
           <div class="info-container">
             <img src="mala/peter.png" alt="Peter">
             <div class="info-texto">
-                         Es tímido, no tiene amigos, su mayor bully es Katy, su compañera. Juntos son vistos en diferentes ocasiones.
-            A Peter le gustan los espaguetis y los gatitos. Su música favorita es "It's OK to Cry" ya que siente que realmente necesita llorar más seguido. Sus padres son amorosos, ellos .̵̤͔̣̖̫̦̜̞̼̲̯̒͗͛.̶̳͒̊̀̎́͂̏͠.̶̛̛̘̚͠.̶̹̝̻͚̬̫͔͛̏͋̔̑͐̑̉͗͑͘͠.̷̼͉̞̗̖͎͇̹̍̅͗͂̓̏͒̕.̶̨̗͚͖̣̥̪͕̽̐̕.̴̭̠̳̘̱̼͖̗͐͌̌͘͠.̸̨̮͓̱̠͖̺̺̻͚̿́̋̋͑̈͊͊̀̊̚͝.̶̺̰̭̼̦͖̻̱̣̀̑̀̏.̸̢̛͙̟̼͇͙͈͑͛͆̓.̷̧̰͚̫͙͍̥̱͍͊̆̔͋̈̐̓͋̃͒̇̚.̶͉̹̗͚̄̆̈́͋͘͝.̷̯̹̻̫͓͉̩̑̈́͊̍͑͆̀͠.̶̡̢̞̖̘̕.̴̩̝͓̰̭̗͍͎̘̺̊͊́͆.̷̧̛͉͓͇̮̥̤̠̣̞̇͋͒̚͜.̷͙͔́̅̿̆̑̉̚͝.̵̛̭̮̼̜͕̀͂͌̀̀̑͒̽̓̚
+               A Peter le gustan los espaguetis y los gatitos. Su música favorita es "It's OK to Cry" ya que siente que realmente necesita llorar más seguido. Sus padres son amorosos, ellos .̵̤͔̣̖̫̦̜̞̼̲̯̒͗͛.̶̳͒̊̀̎́͂̏͠.̶̛̛̘̚͠.̶̹̝̻͚̬̫͔͛̏͋̔̑͐̑̉͗͑͘͠.̷̼͉̞̗̖͎͇̹̍̅͗͂̓̏͒̕.̶̨̗͚͖̣̥̪͕̽̐̕.̴̭̠̳̘̱̼͖̗͐͌̌͘͠.̸̨̮͓̱̠͖̺̺̻͚̿́̋̋͑̈͊͊̀̊̚͝.̶̺̰̭̼̦͖̻̱̣̀̑̀̏.̸̢̛͙̟̼͇͙͈͑͛͆̓.̷̧̰͚̫͙͍̥̱͍͊̆̔͋̈̐̓͋̃͒̇̚.̶͉̹̗͚̄̆̈́͋͘͝.̷̯̹̻̫͓͉̩̑̈́͊̍͑͆̀͠.̶̡̢̞̖̘̕.̴̩̝͓̰̭̗͍͎̘̺̊͊́͆.̷̧̛͉͓͇̮̥̤̠̣̞̇͋͒̚͜.̷͙͔́̅̿̆̑̉̚͝.̵̛̭̮̼̜͕̀͂͌̀̀̑͒̽̓̚
             
-
-
-
             Dato random: Le gusta tocar la guitarra, y siempre se le rompe sus cuerdas
             </div>
           </div>`;
@@ -185,7 +221,7 @@
           <div class="info-container">
             <img src="mala/katy.png" alt="Katy">
             <div class="info-texto">
-            Katy, uno de los personajes de Malcriada.music.<br> Es ruda, grosera, su estilo de musica favorito es el metal y el punk, su comida favorita son los pastes!, su madre suele llevar algunos a casa cuando no esta .̸̟͎͕͑.̶̨̛̻̬̱͗̔.̸̢̬̰̰͇͔̞́̅̊̎̈́͂͂͗̾̏ͅ.̴̻̳̖̦͇̦̼̣͠.̵̰̈́͒͂̾̌͆̄̑̕͝.̵̡̛̯͇͚̰̬̰͊̉͐̾̽̀͜ͅ.̸̢̣̳̩̰̞̰̳̼̉̔͐̔̉̌̐͆͊͝͠.̶̨̣̠͉͈̙̯̤̀̊͑̓́͂̔̇͝͝ͅ.̵̣̱̈́͆̾̑̍̇͑̈́̊̓̚.̶̨̪̮̄͋̄́͋̈́͒͝ Su musica favortia es "Keroseno", le gusta quemar cosas aveces, es su pasatiempo favorito Dato random: le regalo un gato a una amiga, y al rato desaparecio
+              Katy, uno de los personajes de Malcriada.music.<br> Es ruda, grosera, su estilo de musica favorito es el metal y el punk, su comida favorita son los pastes!, su madre suele llevar algunos a casa cuando no esta .̸̟͎͕͑.̶̨̛̻̬̱͗̔.̸̢̬̰̰͇͔̞́̅̊̎̈́͂͂͗̾̏ͅ.̴̻̳̖̦͇̦̼̣͠.̵̰̈́͒͂̾̌͆̄̑̕͝.̵̡̛̯͇͚̰̬̰͊̉͐̾̽̀͜ͅ.̸̢̣̳̩̰̞̰̳̼̉̔͐̔̉̌̐͆͊͝͠.̶̨̣̠͉͈̙̯̤̀̊͑̓́͂̔̇͝͝ͅ.̵̣̱̈́͆̾̑̍̇͑̈́̊̓̚.̶̨̪̮̄͋̄́͋̈́͒͝ Su musica favortia es "Keroseno", le gusta quemar cosas aveces, es su pasatiempo favorito Dato random: le regalo un gato a una amiga, y al rato desaparecio
             </div>
           </div>`;
       }
@@ -203,79 +239,26 @@
           </div>`;
         inicializarCarrusel();
       }
-else if (seccion === "redes") {
-  document.body.style.backgroundImage = "url('mala/fondo4.jpg')";
-  cont.innerHTML = `
-    <div style="display:flex; align-items:center; justify-content:center; gap:80px; flex-wrap:wrap;">
-      
-      <!-- COLUMNA DE REDES -->
-      <div style="display:flex; flex-direction:column; gap:50px; align-items:flex-start;">
-        
-        <!-- INSTAGRAM -->
-        <div style="display:flex; align-items:center; gap:20px;">
-          <img src="mala/instagram.png" alt="Instagram" style="width:80px; height:auto;">
-          <a href="https://www.instagram.com/malcriada.music" target="_blank" 
-             style="background:linear-gradient(90deg, #405DE6, #833AB4, #C13584, #E1306C, #F77737);
-                    width:340px; height:35px; border-radius:6px; 
-                    display:flex; align-items:center; justify-content:center;
-                    color:white; font-weight:bold; text-decoration:none;">
-            @malcriada.music
-          </a>
-        </div>
-
-        <!-- YOUTUBE -->
-        <div style="display:flex; align-items:center; gap:20px;">
-          <img src="mala/youtube.png" alt="YouTube" style="width:90px; height:auto;">
-          <a href="https://www.youtube.com/@malcriadamusic" target="_blank" 
-             style="background-color:red; width:300px; height:35px; border-radius:6px;
-                    display:flex; align-items:center; justify-content:center;
-                    color:white; font-weight:bold; text-decoration:none;">
-            Malcriada Music
-          </a>
-        </div>
-
-        <!-- SPOTIFY -->
-        <div style="display:flex; align-items:center; gap:20px;">
-          <img src="mala/spotify.png" alt="Spotify" style="width:90px; height:auto;">
-          <a href="https://open.spotify.com/artist/2ZUqAIo5iiRcSaq7TQBW5C" target="_blank" 
-             style="background-color:#1DB954; width:300px; height:35px; border-radius:6px;
-                    display:flex; align-items:center; justify-content:center;
-                    color:white; font-weight:bold; text-decoration:none;">
-            MALCRIADA
-          </a>
-        </div>
-
-      </div>
-
-      <!-- FOTO + FLECHA -->
-      <div style="display:flex; flex-direction:column; align-items:center; gap:20px; position:relative;">
-        
-        <!-- Imagen clickeable -->
-        <img src="mala/malcriadamusica.png" alt="Malcriada" 
-             onclick="window.location.href='infierno.html'"
-             style="width:350px; height:auto; border-radius:12px; 
-                    box-shadow:0 4px 12px rgba(0,0,0,0.5); cursor:pointer;
-                    transition:transform 0.3s ease;">
-        
-        <!-- Texto con flecha -->
-        <div style="display:flex; align-items:center; gap:10px; font-size:22px; font-weight:bold;">
-          <span style="animation: parpadeo 1s infinite;">⬅️</span>
-          <span>Presiona a Malcriada</span>
-        </div>
-      </div>
-    </div>
-
-    <style>
-      @keyframes parpadeo {
-        0%, 100% { opacity: 1; transform: translateX(0); }
-        50% { opacity: 0.4; transform: translateX(-5px); }
+      else if (seccion === "redes") {
+        document.body.style.backgroundImage = "url('mala/fondo4.jpg')";
+        cont.innerHTML = `
+          <div style="display:flex; align-items:center; justify-content:center; gap:80px; flex-wrap:wrap;">
+            <div style="display:flex; flex-direction:column; gap:50px; align-items:flex-start;">
+              <div style="display:flex; align-items:center; gap:20px;">
+                <img src="mala/instagram.png" alt="Instagram" style="width:80px;">
+                <a href="https://www.instagram.com/malcriada.music" target="_blank" style="background:linear-gradient(90deg,#405DE6,#833AB4,#C13584,#E1306C,#F77737);width:340px;height:35px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;text-decoration:none;">@malcriada.music</a>
+              </div>
+              <div style="display:flex; align-items:center; gap:20px;">
+                <img src="mala/youtube.png" alt="YouTube" style="width:90px;">
+                <a href="https://www.youtube.com/@malcriadamusic" target="_blank" style="background-color:red;width:300px;height:35px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;text-decoration:none;">Malcriada Music</a>
+              </div>
+              <div style="display:flex; align-items:center; gap:20px;">
+                <img src="mala/spotify.png" alt="Spotify" style="width:90px;">
+                <a href="https://open.spotify.com/artist/2ZUqAIo5iiRcSaq7TQBW5C" target="_blank" style="background-color:#1DB954;width:300px;height:35px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;text-decoration:none;">MALCRIADA</a>
+              </div>
+            </div>
+          </div>`;
       }
-      img[onclick]:hover {
-        transform: scale(1.05);
-      }
-    </style>
-  `;
-}
     }
 
     function inicializarCarrusel() {
@@ -283,11 +266,7 @@ else if (seccion === "redes") {
         { nombre: "Do Something!", portada: "mala/ventana1.png", link: "https://www.youtube.com/watch?v=uPvldhBfwc8" },
         { nombre: "K.O.", portada: "mala/ventana2.png", link: "https://www.youtube.com/watch?v=RSj1tp31x9Y" },
         { nombre: "LoveSong (Cover)", portada: "mala/ventana3.png", link: "https://www.youtube.com/watch?v=p84PLOcepGA" },
-        { nombre: "Mision S******", portada: "mala/ventana4.png", link: "https://www.youtube.com/watch?v=J_p6f885Oxg" },
-        { nombre: "No Puedo Más!", portada: "mala/ventana5.png", link: "https://www.youtube.com/watch?v=4pVvxO9zneU" },
-        { nombre: "No Me Quiero Morir", portada: "mala/ventana6.png", link: "https://www.youtube.com/watch?v=-Wk7CJUSpKg" },
-        { nombre: "Momento (Ft Prayers)", portada: "mala/ventana7.png", link: "https://www.youtube.com/watch?v=Kh2twGe8QBU" },
-        { nombre: "AAAA", portada: "mala/ventana8.png", link: "https://www.youtube.com/watch?v=rJDH-wszLvs" }
+        { nombre: "No Puedo Más!", portada: "mala/ventana5.png", link: "https://www.youtube.com/watch?v=4pVvxO9zneU" }
       ];
 
       let i = 0;
